@@ -100,6 +100,7 @@
             this.benOkuyucuEkle.Text = "Okuyucu Ekle";
             this.benOkuyucuEkle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.benOkuyucuEkle.UseVisualStyleBackColor = false;
+            this.benOkuyucuEkle.Click += new System.EventHandler(this.benOkuyucuEkle_Click);
             // 
             // btnIstatistik
             // 

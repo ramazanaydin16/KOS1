@@ -40,5 +40,11 @@ namespace KSO
             frmKitapEkle KitapEkle = new frmKitapEkle();
             KitapEkle.Show();
         }
+
+        private void benOkuyucuEkle_Click(object sender, EventArgs e)
+        {
+            frmOkuyucuEkle OkuyucuEkle = new frmOkuyucuEkle();
+            OkuyucuEkle.Show();
+        }
     }
 }
