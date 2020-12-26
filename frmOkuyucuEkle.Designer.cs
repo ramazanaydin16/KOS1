@@ -32,12 +32,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtOkulNo = new System.Windows.Forms.Label();
+            this.labelokulno = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtOkulNo = new System.Windows.Forms.TextBox();
             this.radioBay = new System.Windows.Forms.RadioButton();
             this.radioBayan = new System.Windows.Forms.RadioButton();
             this.txtSinif = new System.Windows.Forms.TextBox();
@@ -49,6 +49,8 @@
             this.dataGridOkuyucular = new System.Windows.Forms.DataGridView();
             this.txtOkuyucuAra = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.txtOkyucuID = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOkuyucular)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,15 +94,15 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Sınıfı : ";
             // 
-            // txtOkulNo
+            // labelokulno
             // 
-            this.txtOkulNo.AutoSize = true;
-            this.txtOkulNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtOkulNo.Location = new System.Drawing.Point(58, 167);
-            this.txtOkulNo.Name = "txtOkulNo";
-            this.txtOkulNo.Size = new System.Drawing.Size(75, 16);
-            this.txtOkulNo.TabIndex = 4;
-            this.txtOkulNo.Text = "Okul No : ";
+            this.labelokulno.AutoSize = true;
+            this.labelokulno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelokulno.Location = new System.Drawing.Point(58, 167);
+            this.labelokulno.Name = "labelokulno";
+            this.labelokulno.Size = new System.Drawing.Size(75, 16);
+            this.labelokulno.TabIndex = 4;
+            this.labelokulno.Text = "Okul No : ";
             // 
             // label6
             // 
@@ -128,7 +130,7 @@
             this.txtAd.Location = new System.Drawing.Point(148, 44);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(185, 24);
-            this.txtAd.TabIndex = 7;
+            this.txtAd.TabIndex = 2;
             // 
             // txtSoyad
             // 
@@ -136,15 +138,15 @@
             this.txtSoyad.Location = new System.Drawing.Point(148, 74);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(185, 24);
-            this.txtSoyad.TabIndex = 8;
+            this.txtSoyad.TabIndex = 3;
             // 
-            // textBox3
+            // txtOkulNo
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.textBox3.Location = new System.Drawing.Point(148, 162);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 24);
-            this.textBox3.TabIndex = 9;
+            this.txtOkulNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtOkulNo.Location = new System.Drawing.Point(148, 162);
+            this.txtOkulNo.Name = "txtOkulNo";
+            this.txtOkulNo.Size = new System.Drawing.Size(185, 24);
+            this.txtOkulNo.TabIndex = 7;
             // 
             // radioBay
             // 
@@ -153,7 +155,7 @@
             this.radioBay.Location = new System.Drawing.Point(177, 104);
             this.radioBay.Name = "radioBay";
             this.radioBay.Size = new System.Drawing.Size(51, 22);
-            this.radioBay.TabIndex = 10;
+            this.radioBay.TabIndex = 4;
             this.radioBay.TabStop = true;
             this.radioBay.Text = "Bay";
             this.radioBay.UseVisualStyleBackColor = true;
@@ -165,7 +167,7 @@
             this.radioBayan.Location = new System.Drawing.Point(254, 104);
             this.radioBayan.Name = "radioBayan";
             this.radioBayan.Size = new System.Drawing.Size(67, 22);
-            this.radioBayan.TabIndex = 11;
+            this.radioBayan.TabIndex = 5;
             this.radioBayan.TabStop = true;
             this.radioBayan.Text = "Bayan";
             this.radioBayan.UseVisualStyleBackColor = true;
@@ -176,7 +178,7 @@
             this.txtSinif.Location = new System.Drawing.Point(148, 132);
             this.txtSinif.Name = "txtSinif";
             this.txtSinif.Size = new System.Drawing.Size(185, 24);
-            this.txtSinif.TabIndex = 12;
+            this.txtSinif.TabIndex = 6;
             // 
             // mskTel
             // 
@@ -185,7 +187,7 @@
             this.mskTel.Mask = "(999) 000 0000";
             this.mskTel.Name = "mskTel";
             this.mskTel.Size = new System.Drawing.Size(185, 24);
-            this.mskTel.TabIndex = 13;
+            this.mskTel.TabIndex = 8;
             // 
             // txtAdres
             // 
@@ -194,7 +196,7 @@
             this.txtAdres.Multiline = true;
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.Size = new System.Drawing.Size(185, 40);
-            this.txtAdres.TabIndex = 14;
+            this.txtAdres.TabIndex = 9;
             // 
             // btnTemizle
             // 
@@ -202,9 +204,10 @@
             this.btnTemizle.Location = new System.Drawing.Point(244, 314);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(89, 40);
-            this.btnTemizle.TabIndex = 17;
+            this.btnTemizle.TabIndex = 12;
             this.btnTemizle.Text = "TEMİZLE";
             this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnSil
             // 
@@ -212,9 +215,10 @@
             this.btnSil.Location = new System.Drawing.Point(148, 314);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(89, 40);
-            this.btnSil.TabIndex = 18;
+            this.btnSil.TabIndex = 11;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 
@@ -222,7 +226,7 @@
             this.btnKaydet.Location = new System.Drawing.Point(148, 268);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(185, 40);
-            this.btnKaydet.TabIndex = 19;
+            this.btnKaydet.TabIndex = 10;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -231,13 +235,13 @@
             // 
             this.dataGridOkuyucular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridOkuyucular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOkuyucular.Location = new System.Drawing.Point(356, 34);
+            this.dataGridOkuyucular.Location = new System.Drawing.Point(356, 14);
             this.dataGridOkuyucular.MultiSelect = false;
             this.dataGridOkuyucular.Name = "dataGridOkuyucular";
             this.dataGridOkuyucular.ReadOnly = true;
             this.dataGridOkuyucular.RowHeadersVisible = false;
             this.dataGridOkuyucular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridOkuyucular.Size = new System.Drawing.Size(661, 316);
+            this.dataGridOkuyucular.Size = new System.Drawing.Size(661, 336);
             this.dataGridOkuyucular.TabIndex = 20;
             this.dataGridOkuyucular.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOkuyucular_CellClick);
             // 
@@ -247,7 +251,8 @@
             this.txtOkuyucuAra.Location = new System.Drawing.Point(793, 358);
             this.txtOkuyucuAra.Name = "txtOkuyucuAra";
             this.txtOkuyucuAra.Size = new System.Drawing.Size(224, 24);
-            this.txtOkuyucuAra.TabIndex = 32;
+            this.txtOkuyucuAra.TabIndex = 13;
+            this.txtOkuyucuAra.TextChanged += new System.EventHandler(this.txtOkuyucuAra_TextChanged);
             // 
             // label13
             // 
@@ -259,12 +264,33 @@
             this.label13.TabIndex = 31;
             this.label13.Text = "OKUYUCU ARA : ";
             // 
+            // txtOkyucuID
+            // 
+            this.txtOkyucuID.Enabled = false;
+            this.txtOkyucuID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtOkyucuID.Location = new System.Drawing.Point(148, 14);
+            this.txtOkyucuID.Name = "txtOkyucuID";
+            this.txtOkyucuID.Size = new System.Drawing.Size(185, 24);
+            this.txtOkyucuID.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(35, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 16);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Okuyucu ID : ";
+            // 
             // frmOkuyucuEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(1029, 406);
+            this.Controls.Add(this.txtOkyucuID);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtOkuyucuAra);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dataGridOkuyucular);
@@ -276,12 +302,12 @@
             this.Controls.Add(this.txtSinif);
             this.Controls.Add(this.radioBayan);
             this.Controls.Add(this.radioBay);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtOkulNo);
             this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.txtAd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtOkulNo);
+            this.Controls.Add(this.labelokulno);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -301,12 +327,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label txtOkulNo;
+        private System.Windows.Forms.Label labelokulno;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.TextBox txtSoyad;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtOkulNo;
         private System.Windows.Forms.RadioButton radioBay;
         private System.Windows.Forms.RadioButton radioBayan;
         private System.Windows.Forms.TextBox txtSinif;
@@ -318,5 +344,7 @@
         private System.Windows.Forms.DataGridView dataGridOkuyucular;
         private System.Windows.Forms.TextBox txtOkuyucuAra;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtOkyucuID;
+        private System.Windows.Forms.Label label5;
     }
 }
