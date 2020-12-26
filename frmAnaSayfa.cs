@@ -46,5 +46,11 @@ namespace KSO
             frmOkuyucuEkle OkuyucuEkle = new frmOkuyucuEkle();
             OkuyucuEkle.Show();
         }
+
+        private void btnAyarlar_Click(object sender, EventArgs e)
+        {
+            frmAyarlar Ayarlar = new frmAyarlar();
+            Ayarlar.Show();
+        }
     }
 }

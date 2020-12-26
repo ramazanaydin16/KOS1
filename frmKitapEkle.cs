@@ -23,7 +23,7 @@ namespace KSO
         void KitaplarListesi() // KİTAPLAR LİSTESİNİ HERYERDEN ÇAĞIRMAK İÇİN METHOT VE DATAGRIDE VERİLERİ EKLEME METHODU
         {
             DataTable dataTableKitapListesi = new DataTable();
-            SqlDataAdapter dataAdapterKitapListesi = new SqlDataAdapter("SELECT [KitapID],[KitapAdi],[YazarAdi],[YayinEvi],[BasimYili],[SayfaSayisi],[Tur],[Dolap],[Raf],[Sira],[Aciklama],[Aktif] FROM kitaplar where Aktif = 1", baglan.sql_baglantisi());
+            SqlDataAdapter dataAdapterKitapListesi = new SqlDataAdapter("SELECT [KitapID] 'ID',[KitapAdi] 'KİTAP ADI',[YazarAdi] 'YAZAR ADI',[YayinEvi] 'YAYIN EVİ',[BasimYili] 'BASIM YILI',[SayfaSayisi] 'SAYFA SAYISI',[Tur] 'KİTAP TÜRÜ',[Dolap] 'DOLAP',[Raf] 'RAF',[Sira] 'SIRA',[Aciklama] 'ACIKLAMA' FROM kitaplar where Aktif = 1", baglan.sql_baglantisi());
             dataAdapterKitapListesi.Fill(dataTableKitapListesi);
             dataGridKitap.DataSource = dataTableKitapListesi;
         }
@@ -172,17 +172,18 @@ namespace KSO
         // DATAGRIDDEN SEÇİLEN SATIRI HÜCRELERE ÇEKME
         private void dataGridKitap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtKitapID.Text = dataGridKitap.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtKitapAdi.Text = dataGridKitap.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cmbYazar.Text = dataGridKitap.Rows[e.RowIndex].Cells[2].Value.ToString();
-            cmbYayinEvi.Text = dataGridKitap.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtBasimYili.Text = dataGridKitap.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtSayfaSayisi.Text = dataGridKitap.Rows[e.RowIndex].Cells[5].Value.ToString();
-            cmbKitapTuru.Text = dataGridKitap.Rows[e.RowIndex].Cells[6].Value.ToString();
-            cmbDolap.Text = dataGridKitap.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtRaf.Text = dataGridKitap.Rows[e.RowIndex].Cells[8].Value.ToString();
-            txtSira.Text = dataGridKitap.Rows[e.RowIndex].Cells[9].Value.ToString();
-            txtAciklama.Text = dataGridKitap.Rows[e.RowIndex].Cells[10].Value.ToString();
+            int secilen = dataGridKitap.SelectedCells[0].RowIndex;
+            txtKitapID.Text = dataGridKitap.Rows[secilen].Cells[0].Value.ToString();
+            txtKitapAdi.Text = dataGridKitap.Rows[secilen].Cells[1].Value.ToString();
+            cmbYazar.Text = dataGridKitap.Rows[secilen].Cells[2].Value.ToString();
+            cmbYayinEvi.Text = dataGridKitap.Rows[secilen].Cells[3].Value.ToString();
+            txtBasimYili.Text = dataGridKitap.Rows[secilen].Cells[4].Value.ToString();
+            txtSayfaSayisi.Text = dataGridKitap.Rows[secilen].Cells[5].Value.ToString();
+            cmbKitapTuru.Text = dataGridKitap.Rows[secilen].Cells[6].Value.ToString();
+            cmbDolap.Text = dataGridKitap.Rows[secilen].Cells[7].Value.ToString();
+            txtRaf.Text = dataGridKitap.Rows[secilen].Cells[8].Value.ToString();
+            txtSira.Text = dataGridKitap.Rows[secilen].Cells[9].Value.ToString();
+            txtAciklama.Text = dataGridKitap.Rows[secilen].Cells[10].Value.ToString();
         }
 
         //YAZAR ARAMA KODLARI

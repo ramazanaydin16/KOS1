@@ -24,7 +24,7 @@ namespace KSO
         void Okuyucular() // OKUYUCULAR LİSTESİNİ HERYERDEN ÇAĞIRMAK İÇİN METHOT VE DATAGRIDE VERİLERİ EKLEME METHODU
         {
             DataTable dataTableOkuyucular = new DataTable();
-            SqlDataAdapter dataAdapterOkuyucular = new SqlDataAdapter("SELECT [okuyucuID],[adi],[soyadi],[cinsiyeti],[okulno],[sinifi],[ceptel],[adres] FROM okuyucular where Aktif = 1", baglan.sql_baglantisi());
+            SqlDataAdapter dataAdapterOkuyucular = new SqlDataAdapter("SELECT [okuyucuID] 'ID',[adi] 'AD',[soyadi] 'SOYAD',[cinsiyeti] 'CİNSİYET',[okulno] 'OKUL NO',[sinifi] 'SINIF',[ceptel] 'TELEFON',[adres] 'ADRES' FROM okuyucular where Aktif = 1", baglan.sql_baglantisi());
             dataAdapterOkuyucular.Fill(dataTableOkuyucular);
             dataGridOkuyucular.DataSource = dataTableOkuyucular;
         }
@@ -75,7 +75,7 @@ namespace KSO
                 Okuyucular();
                 Temizle();
                 baglan.sql_baglantisi().Close();
-                MessageBox.Show("Okuyucu Ekleme işlemi başarıyla gerçekleşmiştir.", "Okyucu Eklendi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Okuyucu Ekleme işlemi başarıyla gerçekleşmiştir.", "Okuyucu Eklendi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
@@ -112,23 +112,25 @@ namespace KSO
             }
         }
 
+        //TIKLANAN SATIRI HÜCRELERE DOLDURMA
         private void dataGridOkuyucular_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtOkyucuID.Text = dataGridOkuyucular.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtAd.Text = dataGridOkuyucular.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtSoyad.Text = dataGridOkuyucular.Rows[e.RowIndex].Cells[2].Value.ToString();
-            if (dataGridOkuyucular.Rows[e.RowIndex].Cells[3].Value.ToString() == "Bay")
+            int secilen = dataGridOkuyucular.SelectedCells[0].RowIndex;
+            txtOkyucuID.Text = dataGridOkuyucular.Rows[secilen].Cells[0].Value.ToString();
+            txtAd.Text = dataGridOkuyucular.Rows[secilen].Cells[1].Value.ToString();
+            txtSoyad.Text = dataGridOkuyucular.Rows[secilen].Cells[2].Value.ToString();
+            if (dataGridOkuyucular.Rows[secilen].Cells[3].Value.ToString() == "Bay")
             {
                 radioBay.Checked = true;
             }
-            else if (dataGridOkuyucular.Rows[e.RowIndex].Cells[3].Value.ToString() == "Bayan")
+            else if (dataGridOkuyucular.Rows[secilen].Cells[3].Value.ToString() == "Bayan")
             {
                 radioBayan.Checked = true;
             }
-            txtSinif.Text = dataGridOkuyucular.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtOkulNo.Text = dataGridOkuyucular.Rows[e.RowIndex].Cells[5].Value.ToString();
-            mskTel.Text = dataGridOkuyucular.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtAdres.Text = dataGridOkuyucular.Rows[e.RowIndex].Cells[7].Value.ToString();
+            txtSinif.Text = dataGridOkuyucular.Rows[secilen].Cells[4].Value.ToString();
+            txtOkulNo.Text = dataGridOkuyucular.Rows[secilen].Cells[5].Value.ToString();
+            mskTel.Text = dataGridOkuyucular.Rows[secilen].Cells[6].Value.ToString();
+            txtAdres.Text = dataGridOkuyucular.Rows[secilen].Cells[7].Value.ToString();
 
         }
 
@@ -143,11 +145,11 @@ namespace KSO
         {
             if (txtOkyucuID.Text == "")
             {
-                MessageBox.Show("Lütfen Listeden Kitap Seçiniz !!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen Listeden Okuyucu Seçiniz !!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (Convert.ToInt32(txtOkyucuID.Text) > 0)
             {
-                DialogResult okuyucuSilCevap = MessageBox.Show("Seçtiğiniz Okyucuyu Silmek İstediğinize Emin misiniz ?", "Kitap Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult okuyucuSilCevap = MessageBox.Show("Seçtiğiniz Okuyucuyu Silmek İstediğinize Emin misiniz ?", "Kitap Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (okuyucuSilCevap == DialogResult.Yes)
                 {
                     SqlCommand komutOkuyucuSil = new SqlCommand("UPDATE okuyucular SET Aktif = 0 where okuyucuID = @s1", baglan.sql_baglantisi());
