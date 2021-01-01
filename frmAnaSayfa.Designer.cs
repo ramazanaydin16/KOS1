@@ -74,6 +74,7 @@
             this.btnEmanetIslem.Text = "Emanet İşlemleri";
             this.btnEmanetIslem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmanetIslem.UseVisualStyleBackColor = true;
+            this.btnEmanetIslem.Click += new System.EventHandler(this.btnEmanetIslem_Click);
             // 
             // btnKitapEkle
             // 
@@ -113,6 +114,7 @@
             this.btnIstatistik.Text = "İstatistik";
             this.btnIstatistik.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIstatistik.UseVisualStyleBackColor = true;
+            this.btnIstatistik.Click += new System.EventHandler(this.btnIstatistik_Click);
             // 
             // btnAyarlar
             // 

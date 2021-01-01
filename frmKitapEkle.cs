@@ -23,7 +23,7 @@ namespace KSO
         void KitaplarListesi() // KİTAPLAR LİSTESİNİ HERYERDEN ÇAĞIRMAK İÇİN METHOT VE DATAGRIDE VERİLERİ EKLEME METHODU
         {
             DataTable dataTableKitapListesi = new DataTable();
-            SqlDataAdapter dataAdapterKitapListesi = new SqlDataAdapter("SELECT [KitapID] 'ID',[KitapAdi] 'KİTAP ADI',[YazarAdi] 'YAZAR ADI',[YayinEvi] 'YAYIN EVİ',[BasimYili] 'BASIM YILI',[SayfaSayisi] 'SAYFA SAYISI',[Tur] 'KİTAP TÜRÜ',[Dolap] 'DOLAP',[Raf] 'RAF',[Sira] 'SIRA',[Aciklama] 'ACIKLAMA' FROM kitaplar where Aktif = 1", baglan.sql_baglantisi());
+            SqlDataAdapter dataAdapterKitapListesi = new SqlDataAdapter("SELECT [KitapID] 'ID',[KitapAdi] 'KİTAP ADI',[YazarAdi] 'YAZAR ADI',[YayinEvi] 'YAYIN EVİ',[BasimYili] 'BASIM YILI',[SayfaSayisi] 'SAYFA SAYISI',[Tur] 'KİTAP TÜRÜ',[Dolap] 'DOLAP',[Raf] 'RAF',[Sira] 'SIRA',[Aciklama] 'ACIKLAMA' ,[durum] 'DURUM' FROM kitaplar where Aktif = 1", baglan.sql_baglantisi());
             dataAdapterKitapListesi.Fill(dataTableKitapListesi);
             dataGridKitap.DataSource = dataTableKitapListesi;
         }

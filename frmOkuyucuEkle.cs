@@ -127,8 +127,8 @@ namespace KSO
             {
                 radioBayan.Checked = true;
             }
-            txtSinif.Text = dataGridOkuyucular.Rows[secilen].Cells[4].Value.ToString();
-            txtOkulNo.Text = dataGridOkuyucular.Rows[secilen].Cells[5].Value.ToString();
+            txtOkulNo.Text = dataGridOkuyucular.Rows[secilen].Cells[4].Value.ToString();
+            txtSinif.Text = dataGridOkuyucular.Rows[secilen].Cells[5].Value.ToString();
             mskTel.Text = dataGridOkuyucular.Rows[secilen].Cells[6].Value.ToString();
             txtAdres.Text = dataGridOkuyucular.Rows[secilen].Cells[7].Value.ToString();
 

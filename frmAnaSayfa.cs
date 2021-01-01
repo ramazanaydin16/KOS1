@@ -52,5 +52,17 @@ namespace KSO
             frmAyarlar Ayarlar = new frmAyarlar();
             Ayarlar.Show();
         }
+
+        private void btnEmanetIslem_Click(object sender, EventArgs e)
+        {
+            frmEmanetler Emanetler = new frmEmanetler();
+            Emanetler.Show();
+        }
+
+        private void btnIstatistik_Click(object sender, EventArgs e)
+        {
+            FrmIstatistik istatistik = new FrmIstatistik();
+            istatistik.Show();
+        }
     }
 }
