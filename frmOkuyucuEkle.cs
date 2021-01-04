@@ -67,6 +67,11 @@ namespace KSO
                     komutOkuyucuEkle.Parameters.AddWithValue("@o3", radioBayan.Text);
                 }
 
+                else
+                {
+                    MessageBox.Show("Lütfen cinsiyet seçiniz !");
+                }
+
                 komutOkuyucuEkle.Parameters.AddWithValue("@o4", txtOkulNo.Text);
                 komutOkuyucuEkle.Parameters.AddWithValue("@o5", txtSinif.Text);
                 komutOkuyucuEkle.Parameters.AddWithValue("@o6", mskTel.Text);
@@ -179,6 +184,16 @@ namespace KSO
             dataAdapterOkuyucuAra.SelectCommand.Parameters.AddWithValue("@k1", "%" + txtOkuyucuAra.Text + "%");
             dataAdapterOkuyucuAra.Fill(dataTableOkuyucuAra);
             dataGridOkuyucular.DataSource = dataTableOkuyucuAra;
+        }
+
+        private void imgKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgAltaAl_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

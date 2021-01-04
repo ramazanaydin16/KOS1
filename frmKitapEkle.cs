@@ -205,5 +205,15 @@ namespace KSO
             dataAdapterKitapAra.Fill(dataTableKitapAra);
             dataGridKitap.DataSource = dataTableKitapAra;
         }
+
+        private void imgKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgAltaAl_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

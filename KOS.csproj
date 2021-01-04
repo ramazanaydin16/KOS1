@@ -98,6 +98,12 @@
     <Compile Include="frmGiris.Designer.cs">
       <DependentUpon>frmGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKullanicilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKullanicilar.Designer.cs">
+      <DependentUpon>frmKullanicilar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOkuyucuEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKitapEkle.resx">
       <DependentUpon>frmKitapEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKullanicilar.resx">
+      <DependentUpon>frmKullanicilar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOkuyucuEkle.resx">
       <DependentUpon>frmOkuyucuEkle.cs</DependentUpon>

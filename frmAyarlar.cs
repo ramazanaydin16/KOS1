@@ -61,7 +61,7 @@ namespace KSO
         {
             
             cmbTabloAdi.Items.Add("Yazarlar");
-            cmbTabloAdi.Items.Add("Yayin Evleri");
+            cmbTabloAdi.Items.Add("Yayın Evleri");
             cmbTabloAdi.Items.Add("Türler");
             cmbTabloAdi.Items.Add("Dolaplar");
             cmbTabloAdi.SelectedIndex = 0;          
@@ -309,6 +309,16 @@ namespace KSO
             {
                 MessageBox.Show("Lütfen Listeden Seçim Yapınız !", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void imgKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgAltaAl_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

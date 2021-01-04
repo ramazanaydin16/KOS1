@@ -29,20 +29,31 @@ namespace KSO
             SqlCommand komut = new SqlCommand("select * from kullanicilar where kullaniciAdi=@p1 and sifre=@p2", baglan.sql_baglantisi());
             komut.Parameters.AddWithValue("@p1", txtKullanciAdi.Text);
             komut.Parameters.AddWithValue("@p2", txtSifre.Text);
-            SqlDataReader dr = komut.ExecuteReader();
-            if (dr.Read())
+            SqlDataReader oku = komut.ExecuteReader();
+            if (oku.Read())
             {
                 frmAnaSayfa fr = new frmAnaSayfa();
                 fr.k_ad = txtKullanciAdi.Text;
                 fr.Show();
-                this.Hide();               
+                this.Hide();
+                MessageBox.Show("Sayın : " + oku[1].ToString()+ " " + oku[2].ToString()  + " HOŞGELDİNİZ !", "HOŞGELDİNİZ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Bilgilieriniz Hatalıdır.");
+                MessageBox.Show("Bilgileriniz Hatalıdır.");
             }
             baglan.sql_baglantisi().Close();
 
+        }
+
+        private void imgKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgAltaAl_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
